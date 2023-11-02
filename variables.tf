@@ -27,13 +27,25 @@ variable "iam_managers_group_name" {
   type        = string
 }
 
-variable "iam_managers_policy_description" {
+variable "iam_manager_login_mfa_policy_description" {
+  default     = "Allows the IAM managers group to manage login profiles and MFA devices for IAM users."
+  description = "The description to associate with the IAM policy in the Users account that allows the IAM managers group to manage login profiles and MFA devices for IAM users."
+  type        = string
+}
+
+variable "iam_manager_login_mfa_policy_name" {
+  default     = "ManageLoginProfileAndMFA"
+  description = "The name of the IAM policy in the Users account that allows the IAM managers group to manage login profiles and MFA devices for IAM users."
+  type        = string
+}
+
+variable "iam_manager_roles_policy_description" {
   default     = "Allows the IAM managers group to assume all roles needed in order to manage IAM users and groups."
   description = "The description to associate with the IAM policy in the Users account that allows the IAM managers group to assume all roles needed in order to manage IAM users and groups."
   type        = string
 }
 
-variable "iam_managers_policy_name" {
+variable "iam_manager_roles_policy_name" {
   default     = "AssumeRolesToManageIAMUsersAndGroups"
   description = "The name of the IAM policy in the Users account that allows the IAM managers group to assume all roles needed in order to manage IAM users and groups."
   type        = string
