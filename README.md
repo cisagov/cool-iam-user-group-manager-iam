@@ -61,11 +61,14 @@ No modules.
 | Name | Type |
 |------|------|
 | [aws_iam_group.iam_user_group_managers](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_group) | resource |
-| [aws_iam_group_policy_attachment.iam_user_group_managers](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_group_policy_attachment) | resource |
-| [aws_iam_policy.iam_managers](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
+| [aws_iam_group_policy_attachment.iam_manager_login_mfa](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_group_policy_attachment) | resource |
+| [aws_iam_group_policy_attachment.iam_manager_roles](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_group_policy_attachment) | resource |
+| [aws_iam_policy.iam_manager_login_mfa](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
+| [aws_iam_policy.iam_manager_roles](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 | [aws_iam_user_group_membership.iam_user_group_managers](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_user_group_membership) | resource |
 | [aws_caller_identity.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
-| [aws_iam_policy_document.iam_managers](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
+| [aws_iam_policy_document.iam_manager_login_mfa](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
+| [aws_iam_policy_document.iam_manager_roles](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 | [terraform_remote_state.audit](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/data-sources/remote_state) | data source |
 | [terraform_remote_state.dns](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/data-sources/remote_state) | data source |
 | [terraform_remote_state.images](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/data-sources/remote_state) | data source |
@@ -80,9 +83,11 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | aws\_region | The AWS region to deploy into (e.g. us-east-1). | `string` | `"us-east-1"` | no |
+| iam\_manager\_login\_mfa\_policy\_description | The description to associate with the IAM policy in the Users account that allows the IAM managers group to manage login profiles and MFA devices for IAM users. | `string` | `"Allows the IAM managers group to manage login profiles and MFA devices for IAM users."` | no |
+| iam\_manager\_login\_mfa\_policy\_name | The name of the IAM policy in the Users account that allows the IAM managers group to manage login profiles and MFA devices for IAM users. | `string` | `"ManageLoginProfileAndMFA"` | no |
+| iam\_manager\_roles\_policy\_description | The description to associate with the IAM policy in the Users account that allows the IAM managers group to assume all roles needed in order to manage IAM users and groups. | `string` | `"Allows the IAM managers group to assume all roles needed in order to manage IAM users and groups."` | no |
+| iam\_manager\_roles\_policy\_name | The name of the IAM policy in the Users account that allows the IAM managers group to assume all roles needed in order to manage IAM users and groups. | `string` | `"AssumeRolesToManageIAMUsersAndGroups"` | no |
 | iam\_managers\_group\_name | The name of the IAM group whose members are allowed to manage IAM users and groups. | `string` | `"iam_user_group_managers"` | no |
-| iam\_managers\_policy\_description | The description to associate with the IAM policy in the Users account that allows the IAM managers group to assume all roles needed in order to manage IAM users and groups. | `string` | `"Allows the IAM managers group to assume all roles needed in order to manage IAM users and groups."` | no |
-| iam\_managers\_policy\_name | The name of the IAM policy in the Users account that allows the IAM managers group to assume all roles needed in order to manage IAM users and groups. | `string` | `"AssumeRolesToManageIAMUsersAndGroups"` | no |
 | tags | Tags to apply to all AWS resources created. | `map(string)` | `{}` | no |
 | users | A list containing the usernames of users that exist in the Users account who are allowed to manage IAM users and groups.  Example: [ "firstname1.lastname1", "firstname2.lastname2" ]. | `list(string)` | n/a | yes |
 
@@ -90,8 +95,9 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| iam\_manager\_login\_mfa\_policy | The IAM policy in the Users account that allows the IAM managers group to manage login profiles and MFA devices for IAM users. |
+| iam\_manager\_roles\_policy | The IAM policy in the Users account that allows the IAM managers group to assume all roles needed in order to manage IAM users and groups. |
 | iam\_managers\_group | The IAM group whose members are allowed to manage IAM users and groups. |
-| iam\_managers\_policy | The IAM policy in the Users account that allows the IAM managers group to assume all roles needed in order to manage IAM users and groups. |
 
 ## Notes ##
 
