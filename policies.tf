@@ -40,6 +40,7 @@ data "aws_iam_policy_document" "iam_manager_login_mfa" {
       "iam:GetMFADevice",
       "iam:GetUser",
       "iam:ListAccessKeys",
+      "iam:ListGroupsForUser",
       "iam:ListMFADevices",
       "iam:ListMFADeviceTags",
       "iam:ListUsers",
