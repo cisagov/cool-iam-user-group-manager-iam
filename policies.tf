@@ -11,7 +11,7 @@ data "aws_iam_policy_document" "iam_manager_roles" {
 
     resources = local.required_roles
 
-    sid = "AllowRequiredRoles"
+    sid = "AssumeRequiredRoles"
   }
 }
 
