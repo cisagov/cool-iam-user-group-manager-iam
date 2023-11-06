@@ -5,8 +5,8 @@
 # ------------------------------------------------------------------------------
 
 variable "users" {
-  type        = list(string)
   description = "A list containing the usernames of users that exist in the Users account who are allowed to manage IAM users and groups.  Example: [ \"firstname1.lastname1\", \"firstname2.lastname2\" ]."
+  type        = list(string)
 }
 
 # ------------------------------------------------------------------------------
