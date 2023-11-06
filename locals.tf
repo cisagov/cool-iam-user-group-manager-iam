@@ -12,8 +12,15 @@ locals {
   # as assume role session names.
   caller_user_name = split("/", data.aws_caller_identity.default.arn)[1]
 
-  # Assumption of the following roles is required to successfully manage IAM
-  # users and groups.
+  # Assumption of the following roles are required to successfully manage IAM
+  # users and groups.  The sources for this list of roles are the following
+  # providers, whose respective repositories are used to manage IAM users and
+  # groups:
+  # https://github.com/cisagov/cool-admin-provisioner-iam/blob/develop/providers.tf
+  # https://github.com/cisagov/cool-assessment-provisioner-iam/blob/develop/providers.tf
+  # https://github.com/cisagov/cool-auditor-iam/blob/develop/providers.tf
+  # https://github.com/cisagov/cool-ses-send-email-iam/blob/develop/providers.tf
+  # https://github.com/cisagov/cool-users-non-admin/blob/develop/providers.tf
   required_roles = [
     data.terraform_remote_state.audit.outputs.provisionaccount_role.arn,
     data.terraform_remote_state.dns.outputs.provisionaccount_role.arn,
