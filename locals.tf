@@ -21,6 +21,9 @@ locals {
   # https://github.com/cisagov/cool-auditor-iam/blob/develop/providers.tf
   # https://github.com/cisagov/cool-ses-send-email-iam/blob/develop/providers.tf
   # https://github.com/cisagov/cool-users-non-admin/blob/develop/providers.tf
+  #
+  # Related issue: "Use more targeted permissions to manage user roles"
+  # https://github.com/cisagov/cool-system-internal/issues/137
   required_roles = [
     data.terraform_remote_state.audit.outputs.provisionaccount_role.arn,
     data.terraform_remote_state.dns.outputs.provisionaccount_role.arn,
