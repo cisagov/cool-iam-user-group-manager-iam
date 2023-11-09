@@ -29,6 +29,6 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    # # Managed by cisagov/cool-iam-user-group-manager-iam
-    # ignore:
-    #   - dependency-name: "hashicorp/aws"
+    # Managed by cisagov/skeleton-tf-module
+    ignore:
+      - dependency-name: "hashicorp/aws"
