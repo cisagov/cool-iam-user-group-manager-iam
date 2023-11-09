@@ -1,24 +1,14 @@
-output "arn" {
-  value       = aws_instance.example.arn
-  description = "The EC2 instance ARN."
+output "iam_manager_login_mfa_policy" {
+  description = "The IAM policy in the Users account that allows the IAM managers group to manage login profiles and MFA devices for IAM users."
+  value       = aws_iam_policy.iam_manager_login_mfa
 }
 
-output "availability_zone" {
-  value       = aws_instance.example.availability_zone
-  description = "The AZ where the EC2 instance is deployed."
+output "iam_manager_roles_policy" {
+  description = "The IAM policy in the Users account that allows the IAM managers group to assume all roles needed in order to manage IAM users and groups."
+  value       = aws_iam_policy.iam_manager_roles
 }
 
-output "id" {
-  value       = aws_instance.example.id
-  description = "The EC2 instance ID."
-}
-
-output "private_ip" {
-  value       = aws_instance.example.private_ip
-  description = "The private IP of the EC2 instance."
-}
-
-output "subnet_id" {
-  value       = aws_instance.example.subnet_id
-  description = "The ID of the subnet where the EC2 instance is deployed."
+output "iam_managers_group" {
+  description = "The IAM group whose members are allowed to manage IAM users and groups."
+  value       = aws_iam_group.iam_user_group_managers
 }
