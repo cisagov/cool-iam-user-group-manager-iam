@@ -37,19 +37,20 @@ users and groups in the COOL, and assigning users to that group.
 1. Run the command `terraform init`.
 1. Run the command `terraform apply -var-file=<workspace_name>.tfvars`.
 
+<!-- BEGIN_TF_DOCS -->
 ## Requirements ##
 
 | Name | Version |
 |------|---------|
 | terraform | ~> 1.0 |
-| aws | ~> 3.38 |
+| aws | ~> 4.9 |
 
 ## Providers ##
 
 | Name | Version |
 |------|---------|
-| aws | ~> 3.38 |
-| aws.users | ~> 3.38 |
+| aws | ~> 4.9 |
+| aws.users | ~> 4.9 |
 | terraform | n/a |
 
 ## Modules ##
@@ -98,6 +99,7 @@ No modules.
 | iam\_manager\_login\_mfa\_policy | The IAM policy in the Users account that allows the IAM managers group to manage login profiles and MFA devices for IAM users. |
 | iam\_manager\_roles\_policy | The IAM policy in the Users account that allows the IAM managers group to assume all roles needed in order to manage IAM users and groups. |
 | iam\_managers\_group | The IAM group whose members are allowed to manage IAM users and groups. |
+<!-- END_TF_DOCS -->
 
 ## Notes ##
 
