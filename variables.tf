@@ -4,6 +4,12 @@
 # You must provide a value for each of these parameters.
 # ------------------------------------------------------------------------------
 
+variable "terraform_state_bucket" {
+  description = "The name of the S3 bucket where Terraform state is stored."
+  nullable    = false
+  type        = string
+}
+
 variable "users" {
   description = "A list containing the usernames of users that exist in the Users account who are allowed to manage IAM users and groups.  Example: [ \"firstname1.lastname1\", \"firstname2.lastname2\" ]."
   nullable    = false

@@ -90,6 +90,7 @@ No modules.
 | iam\_manager\_roles\_policy\_name | The name of the IAM policy in the Users account that allows the IAM managers group to assume all roles needed in order to manage IAM users and groups. | `string` | `"AssumeRolesToManageIAMUsersAndGroups"` | no |
 | iam\_managers\_group\_name | The name of the IAM group whose members are allowed to manage IAM users and groups. | `string` | `"iam_user_group_managers"` | no |
 | tags | Tags to apply to all AWS resources created. | `map(string)` | `{}` | no |
+| terraform\_state\_bucket | The name of the S3 bucket where Terraform state is stored. | `string` | n/a | yes |
 | users | A list containing the usernames of users that exist in the Users account who are allowed to manage IAM users and groups.  Example: [ "firstname1.lastname1", "firstname2.lastname2" ]. | `list(string)` | n/a | yes |
 
 ## Outputs ##
