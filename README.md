@@ -43,14 +43,14 @@ users and groups in the COOL, and assigning users to that group.
 ## Requirements ##
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | terraform | ~> 1.1 |
 | aws | ~> 6.7 |
 
 ## Providers ##
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | aws | ~> 6.7 |
 | aws.users | ~> 6.7 |
 | terraform | n/a |
@@ -62,7 +62,7 @@ No modules.
 ## Resources ##
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aws_iam_group.iam_user_group_managers](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_group) | resource |
 | [aws_iam_group_policy_attachment.iam_manager_login_mfa](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_group_policy_attachment) | resource |
 | [aws_iam_group_policy_attachment.iam_manager_roles](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_group_policy_attachment) | resource |
@@ -84,7 +84,7 @@ No modules.
 ## Inputs ##
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | aws\_region | The AWS region to deploy into (e.g. us-east-1). | `string` | `"us-east-1"` | no |
 | iam\_manager\_login\_mfa\_policy\_description | The description to associate with the IAM policy in the Users account that allows the IAM managers group to manage login profiles and MFA devices for IAM users. | `string` | `"Allows the IAM managers group to manage login profiles and MFA devices for IAM users."` | no |
 | iam\_manager\_login\_mfa\_policy\_name | The name of the IAM policy in the Users account that allows the IAM managers group to manage login profiles and MFA devices for IAM users. | `string` | `"ManageLoginProfileAndMFA"` | no |
@@ -98,7 +98,7 @@ No modules.
 ## Outputs ##
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | iam\_manager\_login\_mfa\_policy | The IAM policy in the Users account that allows the IAM managers group to manage login profiles and MFA devices for IAM users. |
 | iam\_manager\_roles\_policy | The IAM policy in the Users account that allows the IAM managers group to assume all roles needed in order to manage IAM users and groups. |
 | iam\_managers\_group | The IAM group whose members are allowed to manage IAM users and groups. |
