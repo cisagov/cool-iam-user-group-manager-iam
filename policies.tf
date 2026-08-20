@@ -57,12 +57,13 @@ data "aws_iam_policy_document" "iam_manager_login_mfa" {
 
     resources = ["*"]
 
-    sid = "ManageLoginProfileAndMFA"
+    sid = "ManageLoginProfileAccessKeysAndMFA"
   }
 }
 
 # The policy that grants IAM-specific permissions necessary to:
 # - Enable/disable console access for IAM users
+# - Enable/disable/delete access keys for IAM users
 # - Create/delete virtual MFA devices for IAM users
 resource "aws_iam_policy" "iam_manager_login_mfa" {
   provider = aws.users

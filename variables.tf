@@ -37,15 +37,15 @@ variable "iam_managers_group_name" {
 }
 
 variable "iam_manager_login_mfa_policy_description" {
-  default     = "Allows the IAM managers group to manage login profiles and MFA devices for IAM users."
-  description = "The description to associate with the IAM policy in the Users account that allows the IAM managers group to manage login profiles and MFA devices for IAM users."
+  default     = "Allows the IAM managers group to manage login profiles, access keys, and MFA devices for IAM users."
+  description = "The description to associate with the IAM policy in the Users account that allows the IAM managers group to manage login profiles, access keys, and MFA devices for IAM users."
   nullable    = false
   type        = string
 }
 
 variable "iam_manager_login_mfa_policy_name" {
-  default     = "ManageLoginProfileAndMFA"
-  description = "The name of the IAM policy in the Users account that allows the IAM managers group to manage login profiles and MFA devices for IAM users."
+  default     = "ManageLoginProfileAccessKeysAndMFA"
+  description = "The name of the IAM policy in the Users account that allows the IAM managers group to manage login profiles, access keys, and MFA devices for IAM users."
   nullable    = false
   type        = string
 }
