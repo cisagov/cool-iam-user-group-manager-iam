@@ -27,6 +27,7 @@ resource "aws_iam_policy" "iam_manager_roles" {
 
 # The policy document with IAM-specific permissions necessary to:
 # - Enable/disable console access for IAM users
+# - Enable/disable access keys for IAM users
 # - Create/delete virtual MFA devices for IAM users
 data "aws_iam_policy_document" "iam_manager_login_mfa" {
   statement {
@@ -47,6 +48,7 @@ data "aws_iam_policy_document" "iam_manager_login_mfa" {
       "iam:ListVirtualMFADevices",
       "iam:TagMFADevice",
       "iam:UntagMFADevice",
+      "iam:UpdateAccessKey",
       "iam:UpdateLoginProfile",
     ]
 
