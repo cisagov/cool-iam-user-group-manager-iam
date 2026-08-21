@@ -86,8 +86,8 @@ No modules.
 | Name | Description | Type | Default | Required |
 | ---- | ----------- | ---- | ------- | :------: |
 | aws\_region | The AWS region to deploy into (e.g. us-east-1). | `string` | `"us-east-1"` | no |
-| iam\_manager\_login\_mfa\_policy\_description | The description to associate with the IAM policy in the Users account that allows the IAM managers group to manage login profiles and MFA devices for IAM users. | `string` | `"Allows the IAM managers group to manage login profiles and MFA devices for IAM users."` | no |
-| iam\_manager\_login\_mfa\_policy\_name | The name of the IAM policy in the Users account that allows the IAM managers group to manage login profiles and MFA devices for IAM users. | `string` | `"ManageLoginProfileAndMFA"` | no |
+| iam\_manager\_login\_mfa\_policy\_description | The description to associate with the IAM policy in the Users account that allows the IAM managers group to manage login profiles, access keys, and MFA devices for IAM users. | `string` | `"Allows the IAM managers group to manage login profiles, access keys, and MFA devices for IAM users."` | no |
+| iam\_manager\_login\_mfa\_policy\_name | The name of the IAM policy in the Users account that allows the IAM managers group to manage login profiles, access keys, and MFA devices for IAM users. | `string` | `"ManageLoginProfileAccessKeysAndMFA"` | no |
 | iam\_manager\_roles\_policy\_description | The description to associate with the IAM policy in the Users account that allows the IAM managers group to assume all roles needed in order to manage IAM users and groups. | `string` | `"Allows the IAM managers group to assume all roles needed in order to manage IAM users and groups."` | no |
 | iam\_manager\_roles\_policy\_name | The name of the IAM policy in the Users account that allows the IAM managers group to assume all roles needed in order to manage IAM users and groups. | `string` | `"AssumeRolesToManageIAMUsersAndGroups"` | no |
 | iam\_managers\_group\_name | The name of the IAM group whose members are allowed to manage IAM users and groups. | `string` | `"iam_user_group_managers"` | no |
